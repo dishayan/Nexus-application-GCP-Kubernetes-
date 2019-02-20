@@ -1,5 +1,5 @@
 # Nexus-application-GCP-Kubernetes
-# Task :- Build a custom container 
+# Task1 :- Build a custom container 
 You do not have to start from scratch, since Nexus has an image already prepared here: https://hub.docker.com/r/sonatype/nexus3/
 Nexus needs a plugin to write into Cloud Storage. You can find its description here: https://github.com/sonatype-nexus-community/nexus-blobstore-google-cloud
 Create a Docker file, which makes an image, where the Cloud Storage plugin is already properly installed. 
