@@ -6,12 +6,15 @@ Create a Docker file, which makes an image, where the Cloud Storage plugin is al
 
 # 
 Attached the Dockerfile. Once you are ready with yout docker file then run below command to make an image.
+
 #docker build -t nexus-debasish-v1 .
 
 Here considering "nexus-debasish-v1" as image name with version.
 
 Run below command to run a container from the above image in background and execute bash shell login to check whether cloud storage plugin is installed properly.
+
 #docker run -dt --name debasish-nexus nexus-debasish bash
 #docker exec -it debasish-nexus /root/gsutil/gsutil --version
+
 #
 It will show you the installed version of "gsutil.
