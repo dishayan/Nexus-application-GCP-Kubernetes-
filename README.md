@@ -13,9 +13,12 @@ Here considering "nexus-debasish-v1" as image name with version.
 
 Run below command to run a container from the above image in background and execute bash shell login to check whether cloud storage plugin is installed properly.
 
-#docker run -dt --name debasish-nexus nexus-debasish bash
+#docker run -dt -p 8081:8081 --name nexus-v1 nexus-debasish bash
 
 #docker exec -it debasish-nexus /root/gsutil/gsutil --version
 
+Also check if the application is working fine.
+
+#curl -u admin:admin123 http://localhost:8081/service/metrics/ping
 #
 It will show you the installed version of "gsutil.
