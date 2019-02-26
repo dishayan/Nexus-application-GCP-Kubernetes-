@@ -1,0 +1,25 @@
+The goal of this exercise is to run a Nexus application on GCP Kubernetes, that can save the uploaded artifacts in Cloud Storage. 
+
+Build a custom container
+
+You do not have to start from scratch, since Nexus has an image already prepared here: https://hub.docker.com/r/sonatype/nexus3/
+
+Nexus needs a plugin to write into Cloud Storage. You can find its description here: https://github.com/sonatype-nexus-community/nexus-blobstore-google-cloud
+
+Create a Docker file, which makes an image, where the Cloud Storage plugin is already properly installed.
+
+Kubernetes deploy
+
+We want to deploy the previously created custom container to Kubernetes, but for that we need a descriptor file. Make a yaml configuration file, that lets you to create the next units: Service, Persistence Volume, Deployment.
+
+Automated script
+
+We will need a runnable script, that allows us to install the entire application from zero, if we have the aforementioned script and the right permissions. Please be mindful about the new Nexus versions, that you will have to deploy to the existing environment (after modifying the necessary files).
+
+Write a script, that automates the next processes: container build, container push, kubernetes setup, deploy.
+
+Continuous integration - theoretical question
+
+It is possible, that we have to modify the previously created files, for example because of a new Nexus version. We want this to automatically be deployed to a test environment after we made the changes on Git.
+
+Please describe in a few words, how would you satisfy this need.
