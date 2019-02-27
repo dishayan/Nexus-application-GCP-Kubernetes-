@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nexus
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: nexus
+  template:
+    metadata:
+      labels:
+        app: nexus
+    spec:
+      containers:
+      - image: dishayan/nexus5 
+        imagePullPolicy: Always
+        name: nexus
+        ports:
+        - containerPort: 8081
+        securityContext:
+          privileged: true
+          capabilities:
+            add:
+              - SYS_ADMIN
+        lifecycle:
+          postStart:
+            exec:
+              command: ["gcloud", "auth", "login", "debasish009@gmail.com"]
+              command: ["gcsfuse", "-o", "nonempty", "debasish-nexus-bucket", "/var/cloud_vol"]
+          preStop:
+            exec:
+              command: ["fusermount", "-u", "/var/cloud_vol"]
