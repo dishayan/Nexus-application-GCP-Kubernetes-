@@ -7,20 +7,20 @@ Create a Docker file, which makes an image, where the Cloud Storage plugin is al
 # 
 Attached the Dockerfile. Once you are ready with yout docker file then run below command to make an image.
 
-#docker build -t sonatype/nexus5 .
+    #docker build -t sonatype/nexus5 .
 
 Here considering "sonatype/nexus5" as image name with version.
 
 Run below command to run a container from the above image in background and execute command to check whether cloud storage plugin is installed properly.
 
-#docker run -d -p 8081:8081 --name nexus sonatype/nexus5
+    #docker run -d -p 8081:8081 --name nexus sonatype/nexus5
 
-#docker exec -it --user root nexus /root/gsutil/gsutil --version
+    #docker exec -it --user root nexus /root/gsutil/gsutil --version
 
 It will show you the installed version of "gsutil.
 
 Also check if the application is working fine. It should return "Pong"
 
-#curl -u admin:admin123 http://localhost:8081/service/metrics/ping
+    #curl -u admin:admin123 http://localhost:8081/service/metrics/ping
 
 
