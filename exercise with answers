@@ -13,7 +13,6 @@ We want to deploy the previously created custom container to Kubernetes, but for
     [] kubernetes descripter file in yaml format is available in my Git repo. So you just need to run below command if you have 3 node cluster already running.
             # kubectl create -f deploy-nexus-kubernetes.yaml
             
-
 Automated script
 We will need a runnable script, that allows us to install the entire application from zero, if we have the aforementioned script and the right permissions. Please be mindful about the new Nexus versions, that you will have to deploy to the existing environment (after modifying the necessary files).
 Write a script, that automates the next processes: container build, container push, kubernetes setup, deploy.
