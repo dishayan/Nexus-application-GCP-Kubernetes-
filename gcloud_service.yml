@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: 2019-02-28T00:00:15Z
+  labels:
+    run: nexus-web
+  name: nexus-web
+  namespace: default
+  resourceVersion: "2934"
+  selfLink: /api/v1/namespaces/default/services/nexus-web
+  uid: d3fcf26d-3aeb-11e9-9577-42010a800058
+spec:
+  clusterIP: 10.47.249.146
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 32077
+    port: 8081
+    protocol: TCP
+    targetPort: 8081
+  selector:
+    run: nexus-web
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - ip: 35.222.163.70
