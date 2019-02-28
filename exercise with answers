@@ -24,5 +24,6 @@ Continuous integration - theoretical question
 It is possible, that we have to modify the previously created files, for example because of a new Nexus version. We want this to automatically be deployed to a test environment after we made the changes on Git.
 Please describe in a few words, how would you satisfy this need.
 
-    [] Yes, its possible by using Jenkins along with Git module. Already did it many times and a sample copy is also placed in my other git repo. https://github.com/dishayan/jenkins
+    [] Yes, its possible by using Jenkins along with Git module. Already did it many times and a sample copy is also placed in my other git repo. 
+           https://github.com/dishayan/jenkins
 
